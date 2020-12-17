@@ -1,0 +1,16 @@
+.input-control {
+    .hidden {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+    }
+    &.clickable,
+    .clickable {
+        cursor: pointer;
+        user-select: none;
+    }
+}

@@ -1,0 +1,52 @@
+@mixin CondorRegular {
+    font-family: condor,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@mixin CondorMedium {
+    font-family: condor,sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+@mixin CondorExtdRegular {
+    font-family: condor-extended,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@mixin CondorExtdItalic {
+    font-family: condor-extended,sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+@mixin CondorExtdMediumItalic {
+    font-family: condor-extended,sans-serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+@mixin CondorWideRegular {
+    font-family: condor-wide,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@mixin CondorWideItalic {
+    font-family: condor-wide,sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.heading-1 {
+    @include CondorExtdMediumItalic();
+    font-size: calc(max(6.5vw, 32px));
+}
+
+@media (min-width: 768px) {
+    .heading-1 {
+        font-size: 52px;
+    }
+}
