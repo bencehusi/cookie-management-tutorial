@@ -102,6 +102,16 @@ img {
     flex: 1 1 100%;
 }
 
+.clickable {
+    cursor: pointer;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
 @each $name, $space in $spacings {
     @each $class, $side in $sides {
         .m#{$class}-#{$name} {

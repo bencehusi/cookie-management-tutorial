@@ -1,16 +1,9 @@
 <template>
     <div>
         <Nuxt />
+        <footer class="footer">
+            <div>© All rights reserved</div>
+            <l-cookie-consent />
+        </footer>
     </div>
 </template>
-
-<script>
-export default {
-    data () {
-        return {
-            cookieDialogOpen: false,
-            consent: true
-        }
-    }
-}
-</script>
