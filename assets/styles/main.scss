@@ -1,11 +1,12 @@
 /* Imports */
-
+@import "~/node_modules/animate.css/animate.min.css";
 @import "~/assets/styles/variables";
 @import "~/assets/styles/typography";
 
 @import "~/assets/styles/shared/input-control";
 
 /* Component imports */
+@import "~/assets/styles/components/navbar";
 @import "~/assets/styles/components/input";
 @import "~/assets/styles/components/button";
 @import "~/assets/styles/components/dialog";
@@ -26,9 +27,56 @@ img {
 /* Theme */
 
 .product {
+    position: relative;
     min-width: 100vw;
     min-height: 100vh;
     overflow-x: hidden;
+    padding-top: 64px;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    &__item {
+        position: relative;
+        color: inherit;
+        text-decoration: none;
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 80px;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            // border: 2px solid rgba($base, 1);
+            border-radius: 8px;
+            z-index: 0;
+            box-shadow:
+                0 3px 8px -2px rgba($base, .15),
+                0 5px 12px rgba($base, .05);
+            background: transparent;
+            backdrop-filter: blur(4px);
+        }
+        &__inner {
+            position: relative;
+            z-index: 2;
+            padding: 1rem;
+            text-align: center;
+        }
+        &__title {
+            padding: 1.5rem 0 1rem 0;
+            @include CondorMedium;
+            font-size: 20px;
+        }
+    }
+
+    &__thumb {
+        display: block;
+        border-bottom: 1px solid $base;
+    }
 
     &__background {
         position: absolute;
@@ -82,6 +130,9 @@ img {
 
 .col {
     padding: .75rem;
+    &-12 {
+        flex: 1 1 100%;
+    }
 }
 
 .consent {
@@ -112,6 +163,13 @@ img {
     padding: 1rem;
 }
 
+.page-enter-active, .page-leave-active {
+    transition: opacity .2s;
+}
+.page-enter, .page-leave-active {
+    opacity: 0;
+}
+
 @each $name, $space in $spacings {
     @each $class, $side in $sides {
         .m#{$class}-#{$name} {
@@ -126,5 +184,21 @@ img {
     }
     .col-sm-6 {
         flex: 1 1 50%;
+    }
+    .product {
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+    }
+}
+
+@media (min-width: 991px) {
+    .product {
+        &__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 64px;
+        }
     }
 }

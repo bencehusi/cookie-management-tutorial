@@ -1,5 +1,6 @@
 <template>
     <div>
+        <l-navbar />
         <Nuxt />
         <footer class="footer">
             <div>© All rights reserved</div>

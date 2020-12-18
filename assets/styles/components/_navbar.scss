@@ -1,0 +1,32 @@
+.nav {
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__site-name {
+        @include CondorExtdRegular;
+        color: inherit;
+        text-decoration: none;
+    }
+
+    &__links {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    &__link {
+        display: inline-flex;
+        padding: .5rem 1rem;
+        color: inherit;
+        text-decoration: none;
+    }
+}
